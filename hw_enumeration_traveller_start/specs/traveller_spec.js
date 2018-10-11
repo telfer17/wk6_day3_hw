@@ -23,61 +23,61 @@ describe('Traveller', function() {
   });
 
   it('should have a collection of journeys', function() {
-    const actual = traveller.journeys;
-    assert.deepStrictEqual(actual, journeys);
+    const expected = traveller.journeys;
+    assert.deepStrictEqual(expected, journeys);
   });
 
   it('should be able to get the journeys start locations', function() {
-    const actual = [
+    const expected = [
       journey1.startLocation,
       journey2.startLocation,
       journey3.startLocation,
       journey4.startLocation,
       journey5.startLocation
     ];
-    assert.deepStrictEqual(actual, traveller.getJourneyStartLocations());
+    assert.deepStrictEqual(expected, traveller.getJourneyStartLocations());
   });
 
   it('should be able to get the journeys end locations', function() {
-    const actual = [
+    const expected = [
       journey1.endLocation,
       journey2.endLocation,
       journey3.endLocation,
       journey4.endLocation,
       journey5.endLocation
     ];
-    assert.deepStrictEqual(actual, traveller.getJourneyEndLocations());
+    assert.deepStrictEqual(expected, traveller.getJourneyEndLocations());
   });
 
   it('should be able to get a list of the modes of transport', function() {
-    const actual = [ 'train', 'train', 'aeroplane', 'car', 'ferry' ];
-    assert.deepStrictEqual(actual, traveller.getModesOfTransport());
+    const expected = [ 'train', 'train', 'aeroplane', 'car', 'ferry' ];
+    assert.deepStrictEqual(expected, traveller.getModesOfTransport());
   });
 
   it('should be able to get journeys by transport', function() {
-    const actual = [
+    const expected = [
       journey1,
       journey2
     ];
-    assert.deepStrictEqual(actual, traveller.getJourneysByTransport('train'));
+    assert.deepStrictEqual(expected, traveller.getJourneysByTransport('train'));
   });
 
   it('should be able to get journeys over a certain distance', function() {
-    const actual = [
+    const expected = [
       journey3,
       journey4
     ];
-    assert.deepStrictEqual(actual, traveller.getJourneysByMinDistance(1000))
+    assert.deepStrictEqual(expected, traveller.getJourneysByMinDistance(1000))
   });
 
   it('should be able to calculate total distance travelled', function() {
-    const actual = 11710;
-    assert.deepStrictEqual(actual, traveller.calculateTotalDistanceTravelled());
+    const expected = 11710;
+    assert.deepStrictEqual(expected, traveller.calculateTotalDistanceTravelled());
   });
 
   it('should be able to get a unique list of the modes of transport', function() {
-    const actual = [ 'train', 'aeroplane', 'car', 'ferry' ];
-    assert.deepStrictEqual(actual, traveller.getUniqueModesOfTransport());
+    const expected = [ 'train', 'aeroplane', 'car', 'ferry' ];
+    assert.deepStrictEqual(expected, traveller.getUniqueModesOfTransport());
   });
 
 });
